@@ -7,13 +7,15 @@ import java.math.BigDecimal;
  */
 public class Tick {
 
+    // Instance size: 40 bytes
     private BigDecimal open;
     private BigDecimal close;
     private BigDecimal high;
     private BigDecimal low;
     private BigDecimal avg;
-    private Long amount;
-    private Long volume;
+    //
+    private long amount;
+    private long volume;
 
     public Tick() {
         this.open = BigDecimal.valueOf(10.0);
@@ -65,20 +67,23 @@ public class Tick {
         this.avg = avg;
     }
 
-    public Long getAmount() {
+    public long getAmount() {
         return amount;
     }
 
-    public void setAmount(Long amount) {
+    public void setAmount(long amount) {
         this.amount = amount;
     }
 
-    public Long getVolume() {
+    public long getVolume() {
         return volume;
     }
 
-    public void setVolume(Long volume) {
+    public void setVolume(long volume) {
         this.volume = volume;
     }
 
+    public void reset(){
+
+    }
 }

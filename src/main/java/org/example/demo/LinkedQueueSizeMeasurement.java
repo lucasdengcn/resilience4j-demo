@@ -8,13 +8,12 @@ public class LinkedQueueSizeMeasurement {
 
     /**
      *
-     *      COUNT       AVG       SUM   DESCRIPTION
-     *     200000        24   4800000   java.lang.Long
-     *     500000        40  20000000   java.math.BigDecimal
-     *          1        24        24   java.util.concurrent.ConcurrentLinkedQueue
-     *     100001        24   2400024   java.util.concurrent.ConcurrentLinkedQueue$Node
-     *     100000        40   4000000   org.example.demo.Tick
-     *     900002            31200048   (total) ~ 32MB
+     COUNT       AVG       SUM   DESCRIPTION
+     500000        40  20000000   java.math.BigDecimal
+     1        24        24   java.util.concurrent.ConcurrentLinkedQueue
+     100001        24   2400024   java.util.concurrent.ConcurrentLinkedQueue$Node
+     100000        48   4800000   org.example.demo.Tick
+     700002            27200048   (total) ~ 30MB
      *
      * @param args
      */
