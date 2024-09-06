@@ -13,6 +13,8 @@ dependencies {
     implementation "io.github.resilience4j:resilience4j-all:2.2.0"
     implementation 'org.apache.commons:commons-lang3:3.15.0'
     //
+    implementation 'org.openjdk.jol:jol-core:0.17'
+    //
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     // import mocktio java library

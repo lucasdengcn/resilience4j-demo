@@ -29,7 +29,8 @@ public class CountDownLatchExample {
         // 等待所有任务完成
         latch.await();
 
-        System.out.println("所有任务完成，继续执行后续操作");
+        String x = "所有任务完成，继续执行后续操作";
+        System.out.println(x);
 
         executor.shutdown();
     }
