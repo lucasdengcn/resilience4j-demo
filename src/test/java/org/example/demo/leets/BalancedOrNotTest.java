@@ -1,4 +1,5 @@
-import org.example.demo.leets.BalancedOrNot;
+package org.example.demo.leets;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,17 +1,35 @@
 package org.example.demo;
 
+import java.time.LocalDateTime;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Tick tick0 = new Tick();
+        tick0.setAmount(10);
+        System.out.println("0: " + tick0);
+        //
+        final Tick tick1 = tick0;
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("10: " + tick1 + ", " + tick1.getAmount());
+                tick1.setAmount(100); // amount is not certain.
+                System.out.println(LocalDateTime.now() + " >> 11: " + tick1 + ", " + tick1.getAmount());
+            }
+        });
+        final Tick tick2 = tick0;
+        Thread thread2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("20: " + tick2 + ", " + tick2.getAmount());
+                tick2.setAmount(200);// amount is not certain.
+                System.out.println(LocalDateTime.now() +  " >> 21: " + tick2 + ", " + tick2.getAmount());
+            }
+        });
+        //
+        thread1.start();
+        thread2.start();
     }
 }
